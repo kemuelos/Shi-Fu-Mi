@@ -18,12 +18,23 @@
 				name="pseudo"
 				placeholder="entrez votre pseudo"
 			/>
-			<button id="play">Play</button>
+			<button class="button" id="play">Play</button>
 		</div>
 
 		<div class="invisible" id="jeu">
-			<h2>Jeu</h2>
-			<button id="return">Back</button>
+			<div id="arena">
+				<div id="player">
+					<button class="player_choice" id="pierre">pierre</button>
+					<button class="player_choice" id="papier">papier</button>
+					<button class="player_choice" id="ciseaux">ciseaux</button>
+					<h1 class="move" id="player_move"></h1>
+				</div>
+				<div id="computer">
+					<h1 class="move" id="computer_move"></h1>
+				</div>
+			</div>
+
+			<button class="button" id="return">Back</button>
 		</div>
 	</body>
 </html>

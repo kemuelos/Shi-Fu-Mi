@@ -49,3 +49,28 @@ h2 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+#arena {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+}
+
+#player,
+#computer {
+	width: 250px;
+	height: 250px;
+	background-color: white;
+	border-radius: 10%;
+}
+
+.button {
+	width: 120px;
+	height: 30px;
+	background-color: white;
+	border-radius: 25px;
+}
+
+h1.move {
+	color: red;
+}
