@@ -10,9 +10,38 @@ function win_condition(player_choice, computer_choice) {
 		(player_choice === "ciseaux" && computer_choice === "papier") ||
 		(player_choice === "papier" && computer_choice === "pierre")
 	) {
+		compteur_player++;
+		if (compteur_ia > 0) compteur_ia--;
+		console.log({ compteur_player, compteur_ia });
 		return "gagné";
 	} else {
+		if (compteur_player > 0) compteur_player--;
+		compteur_ia++;
+		console.log({ compteur_player, compteur_ia });
 		return "perdu";
+	}
+}
+
+function score(compteur_player, compteur_ia) {
+	if (compteur_player === 3) {
+		div_jeu.classList.toggle("invisible");
+		msg_winner.classList.toggle("invisible");
+
+		setTimeout(() => {
+			location.reload();
+		}, 1500);
+		return "vous avez gagné";
+	} else if (compteur_ia === 3) {
+		div_jeu.classList.toggle("invisible");
+		msg_looser.classList.toggle("invisible");
+
+		setTimeout(() => {
+			location.reload();
+		}, 1500);
+
+		return "vous avez perdu";
+	} else {
+		return "continue";
 	}
 }
 
@@ -26,6 +55,9 @@ const retour_button = document.querySelector("#return");
 
 const player_h1 = document.querySelector("#player_move");
 const computer_h1 = document.querySelector("#computer_move");
+
+const msg_winner = document.querySelector("#winner");
+const msg_looser = document.querySelector("#looser");
 
 // get divs by id
 const div_menu = document.getElementById("menu");
@@ -49,6 +81,8 @@ retour_button.addEventListener("click", (e) => {
 });
 
 const IA_moves = ["pierre", "papier", "ciseaux"];
+let compteur_player = 0;
+let compteur_ia = 0;
 
 // player choice
 for (const button of player_choices) {
@@ -62,11 +96,8 @@ for (const button of player_choices) {
 		player_h1.innerText = player_choice;
 		computer_h1.innerText = computer_choice;
 		const resultat = win_condition(player_choice, computer_choice);
-		console.log(win_condition(player_choice, computer_choice));
-		setTimeout(() => {
-			alert(resultat);
-			
-		}, 200);
+		const score_resultat = score(compteur_player, compteur_ia);
+		console.log(resultat);
+		console.log(score_resultat);
 	});
 }
-
