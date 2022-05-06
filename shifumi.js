@@ -22,8 +22,8 @@ function win_condition(player_choice, computer_choice) {
 	}
 }
 
-function score(compteur_player, compteur_ia) {
-	if (compteur_player === 3) {
+function score(compteur_player, compteur_ia, manche) {
+	if (compteur_player == manche_input.value) {
 		div_jeu.classList.toggle("invisible");
 		msg_winner.classList.toggle("invisible");
 
@@ -31,7 +31,7 @@ function score(compteur_player, compteur_ia) {
 			location.reload();
 		}, 1500);
 		return "vous avez gagné";
-	} else if (compteur_ia === 3) {
+	} else if (compteur_ia == manche_input.value) {
 		div_jeu.classList.toggle("invisible");
 		msg_looser.classList.toggle("invisible");
 
@@ -47,6 +47,7 @@ function score(compteur_player, compteur_ia) {
 
 // get html elements
 const play_button = document.querySelector("#play");
+const manche_input = document.querySelector("#manche");
 const pseudo_input = document.querySelector("#pseudo");
 
 const player_choices = document.querySelectorAll(".player_choice");
@@ -63,9 +64,8 @@ const msg_looser = document.querySelector("#looser");
 const div_menu = document.getElementById("menu");
 const div_jeu = document.getElementById("jeu");
 
+// add event listeners
 play_button.addEventListener("click", (e) => {
-	// console.log(pseudo_input.value);
-
 	// toggle : css class on/off for this selected element
 	div_jeu.classList.toggle("invisible");
 
@@ -83,6 +83,7 @@ retour_button.addEventListener("click", (e) => {
 const IA_moves = ["pierre", "papier", "ciseaux"];
 let compteur_player = 0;
 let compteur_ia = 0;
+const manche = manche_input.value;
 
 // player choice
 for (const button of player_choices) {
@@ -96,7 +97,7 @@ for (const button of player_choices) {
 		player_h1.innerText = player_choice;
 		computer_h1.innerText = computer_choice;
 		const resultat = win_condition(player_choice, computer_choice);
-		const score_resultat = score(compteur_player, compteur_ia);
+		const score_resultat = score(compteur_player, compteur_ia, manche);
 		console.log(resultat);
 		console.log(score_resultat);
 	});
