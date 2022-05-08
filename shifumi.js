@@ -22,7 +22,7 @@ function win_condition(player_choice, computer_choice) {
 	}
 }
 
-function score(compteur_player, compteur_ia, manche) {
+function score(compteur_player, compteur_ia) {
 	if (compteur_player == manche_input.value) {
 		div_jeu.classList.toggle("invisible");
 		msg_winner.classList.toggle("invisible");
@@ -54,8 +54,8 @@ const player_choices = document.querySelectorAll(".player_choice");
 
 const retour_button = document.querySelector("#return");
 
-const player_h1 = document.querySelector("#player_move");
-const computer_h1 = document.querySelector("#computer_move");
+// const player_h1 = document.querySelector("#player_move");
+// const computer_h1 = document.querySelector("#computer_move");
 
 const msg_winner = document.querySelector("#winner");
 const msg_looser = document.querySelector("#looser");
@@ -63,6 +63,14 @@ const msg_looser = document.querySelector("#looser");
 // get divs by id
 const div_menu = document.getElementById("menu");
 const div_jeu = document.getElementById("jeu");
+
+const player_pierre = document.getElementById("img-pierre-player");
+const player_papier = document.getElementById("img-papier-player");
+const player_ciseaux = document.getElementById("img-ciseaux-player");
+
+const computer_pierre = document.getElementById("img-pierre-computer");
+const computer_papier = document.getElementById("img-papier-computer");
+const computer_ciseaux = document.getElementById("img-ciseaux-computer");
 
 // add event listeners
 play_button.addEventListener("click", (e) => {
@@ -92,13 +100,44 @@ for (const button of player_choices) {
 
 		const computer_move = random();
 		const computer_choice = IA_moves[computer_move];
-		// console.log({ computer_move });
 
-		player_h1.innerText = player_choice;
-		computer_h1.innerText = computer_choice;
+		// affichage des images suivant les choix
+		if (player_choice === "pierre") {
+			player_pierre.classList.toggle("invisible");
+			setTimeout(() => {
+				player_pierre.classList.toggle("invisible");
+			}, 3000);
+		} else if (player_choice === "papier") {
+			player_papier.classList.toggle("invisible");
+			setTimeout(() => {
+				player_papier.classList.toggle("invisible");
+			}, 3000);
+		} else if (player_choice === "ciseaux") {
+			player_ciseaux.classList.toggle("invisible");
+			setTimeout(() => {
+				player_ciseaux.classList.toggle("invisible");
+			}, 3000);
+		}
+
+		if (computer_choice === "pierre") {
+			computer_pierre.classList.toggle("invisible");
+			setTimeout(() => {
+				computer_pierre.classList.toggle("invisible");
+			}, 3000);
+		} else if (computer_choice === "papier") {
+			computer_papier.classList.toggle("invisible");
+			setTimeout(() => {
+				computer_papier.classList.toggle("invisible");
+			}, 3000);
+		} else if (computer_choice === "ciseaux") {
+			computer_ciseaux.classList.toggle("invisible");
+			setTimeout(() => {
+				computer_ciseaux.classList.toggle("invisible");
+			}, 3000);
+		}
+
+		// logique de victoire
 		const resultat = win_condition(player_choice, computer_choice);
-		const score_resultat = score(compteur_player, compteur_ia, manche);
-		console.log(resultat);
-		console.log(score_resultat);
+		const score_resultat = score(compteur_player, compteur_ia);
 	});
 }

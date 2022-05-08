@@ -18,12 +18,7 @@
 				name="manche"
 				placeholder="nombre de manche"
 			/>
-			<input
-				type="text"
-				id="pseudo"
-				name="pseudo"
-				placeholder="votre pseudo"
-			/>
+			<input type="text" id="pseudo" name="pseudo" placeholder="votre pseudo" />
 			<button class="button" id="play">Play</button>
 		</div>
 
@@ -33,10 +28,27 @@
 					<button class="player_choice" id="pierre">pierre</button>
 					<button class="player_choice" id="papier">papier</button>
 					<button class="player_choice" id="ciseaux">ciseaux</button>
-					<h1 class="move" id="player_move"></h1>
+
+					<div id="img-pierre-player" class="invisible">
+						<img src="./images/pierre.png" alt="" />
+					</div>
+					<div id="img-papier-player" class="invisible">
+						<img src="./images/papier.png" alt="" />
+					</div>
+					<div id="img-ciseaux-player" class="invisible">
+						<img src="./images/ciseaux.png" alt="" />
+					</div>
 				</div>
 				<div id="computer">
-					<h1 class="move" id="computer_move"></h1>
+					<div id="img-pierre-computer" class="invisible">
+						<img src="./images/pierre.png" alt="" />
+					</div>
+					<div id="img-papier-computer" class="invisible">
+						<img src="./images/papier.png" alt="" />
+					</div>
+					<div id="img-ciseaux-computer" class="invisible">
+						<img src="./images/ciseaux.png" alt="" />
+					</div>
 				</div>
 			</div>
 
