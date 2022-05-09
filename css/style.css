@@ -64,8 +64,6 @@ h2 {
 	border-radius: 10%;
 }
 
-
-
 .button {
 	width: 120px;
 	height: 30px;
@@ -73,8 +71,8 @@ h2 {
 	border-radius: 25px;
 }
 
-h1.move {
-	color: red;
+h2.score {
+	color: black;
 }
 
 button.player_choice {

@@ -54,8 +54,8 @@ const player_choices = document.querySelectorAll(".player_choice");
 
 const retour_button = document.querySelector("#return");
 
-// const player_h1 = document.querySelector("#player_move");
-// const computer_h1 = document.querySelector("#computer_move");
+const player_score = document.querySelector("#score-player");
+const computer_score = document.querySelector("#score-computer");
 
 const msg_winner = document.querySelector("#winner");
 const msg_looser = document.querySelector("#looser");
@@ -139,5 +139,7 @@ for (const button of player_choices) {
 		// logique de victoire
 		const resultat = win_condition(player_choice, computer_choice);
 		const score_resultat = score(compteur_player, compteur_ia);
+		player_score.innerHTML = "Score" + compteur_player;
+		computer_score.innerHTML = "Score" + compteur_ia;
 	});
 }
