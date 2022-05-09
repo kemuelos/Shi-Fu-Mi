@@ -13,7 +13,9 @@
 
 		<div id="menu">
 			<input
-				type="text"
+				type="number"
+				min="1"
+				max="7"
 				id="manche"
 				name="manche"
 				placeholder="nombre de manche"
@@ -24,35 +26,23 @@
 
 		<div class="invisible" id="jeu">
 			<div id="arena">
-				<div id="player">
-					<button class="player_choice" id="pierre">pierre</button>
-					<button class="player_choice" id="papier">papier</button>
-					<button class="player_choice" id="ciseaux">ciseaux</button>
-
-					<div id="img-pierre-player" class="invisible">
-						<img src="./images/pierre.png" alt="" />
+				<div id="player-container">
+					<div>
+						<button class="player_choice" id="pierre">pierre</button>
+						<button class="player_choice" id="papier">papier</button>
+						<button class="player_choice" id="ciseaux">ciseaux</button>
 					</div>
-					<div id="img-papier-player" class="invisible">
-						<img src="./images/papier.png" alt="" />
+					<div id="player">
+						
 					</div>
-					<div id="img-ciseaux-player" class="invisible">
-						<img src="./images/ciseaux.png" alt="" />
-					</div>
-
-					<h2 class="score" id="score-player"></h2>
+					<h2 class="score" id="score-player">Score : 0</h2>
 				</div>
-				<div id="computer">
-					<div id="img-pierre-computer" class="invisible">
-						<img src="./images/pierre.png" alt="" />
-					</div>
-					<div id="img-papier-computer" class="invisible">
-						<img src="./images/papier.png" alt="" />
-					</div>
-					<div id="img-ciseaux-computer" class="invisible">
-						<img src="./images/ciseaux.png" alt="" />
-					</div>
 
-					<h2 class="score" id="score-computer"></h2>
+				<div id="computer-container">
+					<div id="computer">
+						
+					</div>
+					<h2 class="score" id="score-computer">Score : 0</h2>
 				</div>
 			</div>
 

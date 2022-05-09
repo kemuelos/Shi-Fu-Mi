@@ -20,6 +20,10 @@ h2 {
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+input {
+	width: 150px;
+}
+
 .invisible {
 	display: none !important;
 }
@@ -62,6 +66,9 @@ h2 {
 	height: 250px;
 	background-color: white;
 	border-radius: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .button {
@@ -80,4 +87,12 @@ button.player_choice {
 	height: 20px;
 	background-color: white;
 	border-radius: 25px;
+}
+
+#player-container,
+#computer-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
 }

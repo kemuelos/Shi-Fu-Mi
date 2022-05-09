@@ -64,13 +64,8 @@ const msg_looser = document.querySelector("#looser");
 const div_menu = document.getElementById("menu");
 const div_jeu = document.getElementById("jeu");
 
-const player_pierre = document.getElementById("img-pierre-player");
-const player_papier = document.getElementById("img-papier-player");
-const player_ciseaux = document.getElementById("img-ciseaux-player");
-
-const computer_pierre = document.getElementById("img-pierre-computer");
-const computer_papier = document.getElementById("img-papier-computer");
-const computer_ciseaux = document.getElementById("img-ciseaux-computer");
+const div_player = document.getElementById("player");
+const div_computer = document.getElementById("computer");
 
 // add event listeners
 play_button.addEventListener("click", (e) => {
@@ -102,44 +97,22 @@ for (const button of player_choices) {
 		const computer_choice = IA_moves[computer_move];
 
 		// affichage des images suivant les choix
-		if (player_choice === "pierre") {
-			player_pierre.classList.toggle("invisible");
-			setTimeout(() => {
-				player_pierre.classList.toggle("invisible");
-			}, 3000);
-		} else if (player_choice === "papier") {
-			player_papier.classList.toggle("invisible");
-			setTimeout(() => {
-				player_papier.classList.toggle("invisible");
-			}, 3000);
-		} else if (player_choice === "ciseaux") {
-			player_ciseaux.classList.toggle("invisible");
-			setTimeout(() => {
-				player_ciseaux.classList.toggle("invisible");
-			}, 3000);
-		}
+		const player_image = document.createElement("img");
+		const computer_image = document.createElement("img");
 
-		if (computer_choice === "pierre") {
-			computer_pierre.classList.toggle("invisible");
-			setTimeout(() => {
-				computer_pierre.classList.toggle("invisible");
-			}, 3000);
-		} else if (computer_choice === "papier") {
-			computer_papier.classList.toggle("invisible");
-			setTimeout(() => {
-				computer_papier.classList.toggle("invisible");
-			}, 3000);
-		} else if (computer_choice === "ciseaux") {
-			computer_ciseaux.classList.toggle("invisible");
-			setTimeout(() => {
-				computer_ciseaux.classList.toggle("invisible");
-			}, 3000);
-		}
+		player_image.src = `./images/${player_choice}.png`;
+		computer_image.src = `./images/${computer_choice}.png`;
+
+		div_player.innerHTML = "";
+		div_computer.innerHTML = "";
+
+		div_player.appendChild(player_image);
+		div_computer.appendChild(computer_image);
 
 		// logique de victoire
-		const resultat = win_condition(player_choice, computer_choice);
-		const score_resultat = score(compteur_player, compteur_ia);
-		player_score.innerHTML = "Score" + compteur_player;
-		computer_score.innerHTML = "Score" + compteur_ia;
+		win_condition(player_choice, computer_choice);
+		score(compteur_player, compteur_ia);
+		player_score.innerHTML = "Score : " + compteur_player;
+		computer_score.innerHTML = "Score : " + compteur_ia;
 	});
 }
