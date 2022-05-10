@@ -13,7 +13,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
 	text-align: center;
 	color: whitesmoke;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -39,6 +40,36 @@ input {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+#winner {
+	width: 200px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	border-radius: 10px;
+
+	background-color: #3ca039;
+	color: whitesmoke;
+}
+
+#looser {
+	width: 200px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	border-radius: 10px;
+
+	background-color: #a03c39;
+	color: whitesmoke;
 }
 
 #jeu {
@@ -84,6 +115,13 @@ h2.score {
 
 button.player_choice {
 	width: 60px;
+	height: 20px;
+	background-color: white;
+	border-radius: 25px;
+}
+
+button.return_popup {
+	width: 120px;
 	height: 20px;
 	background-color: white;
 	border-radius: 25px;

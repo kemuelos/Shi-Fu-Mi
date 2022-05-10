@@ -25,6 +25,16 @@
 		</div>
 
 		<div class="invisible" id="jeu">
+			<div class="invisible" id="winner">
+				<h3>Vous avez gagné !</h3>
+				<button class="return_popup" id="returnp">Retour menu</button>
+			</div>
+
+			<div class="invisible" id="looser">
+				<h3>Vous avez perdu !</h3>
+				<button class="return_popup" id="returnp">Retour menu</button>
+			</div>
+
 			<div id="arena">
 				<div id="player-container">
 					<div>
@@ -32,23 +42,17 @@
 						<button class="player_choice" id="papier">papier</button>
 						<button class="player_choice" id="ciseaux">ciseaux</button>
 					</div>
-					<div id="player">
-						
-					</div>
+					<div id="player"></div>
 					<h2 class="score" id="score-player">Score : 0</h2>
 				</div>
 
 				<div id="computer-container">
-					<div id="computer">
-						
-					</div>
+					<div id="computer"></div>
 					<h2 class="score" id="score-computer">Score : 0</h2>
 				</div>
 			</div>
 
 			<button class="button" id="return">Back</button>
 		</div>
-		<h1 class="invisible" id="winner">Vous avez gagné</h1>
-		<h1 class="invisible" id="looser">Vous avez perdu</h1>
 	</body>
 </html>

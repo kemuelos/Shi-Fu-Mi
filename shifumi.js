@@ -24,20 +24,18 @@ function win_condition(player_choice, computer_choice) {
 
 function score(compteur_player, compteur_ia) {
 	if (compteur_player == manche_input.value) {
-		div_jeu.classList.toggle("invisible");
 		msg_winner.classList.toggle("invisible");
 
-		setTimeout(() => {
-			location.reload();
-		}, 1500);
+		// setTimeout(() => {
+		// 	location.reload();
+		// }, 1500);
 		return "vous avez gagné";
 	} else if (compteur_ia == manche_input.value) {
-		div_jeu.classList.toggle("invisible");
 		msg_looser.classList.toggle("invisible");
 
-		setTimeout(() => {
-			location.reload();
-		}, 1500);
+		// setTimeout(() => {
+		// 	location.reload();
+		// }, 1500);
 
 		return "vous avez perdu";
 	} else {
@@ -53,6 +51,7 @@ const pseudo_input = document.querySelector("#pseudo");
 const player_choices = document.querySelectorAll(".player_choice");
 
 const retour_button = document.querySelector("#return");
+const retour_popup = document.querySelectorAll(".return_popup");
 
 const player_score = document.querySelector("#score-player");
 const computer_score = document.querySelector("#score-computer");
@@ -82,6 +81,12 @@ retour_button.addEventListener("click", (e) => {
 
 	div_jeu.classList.toggle("invisible");
 });
+
+for (const button of retour_popup) {
+	button.addEventListener("click", (e) => {
+		location.reload();
+	});
+}
 
 const IA_moves = ["pierre", "papier", "ciseaux"];
 let compteur_player = 0;
